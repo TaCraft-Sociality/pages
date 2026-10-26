@@ -1,26 +1,21 @@
 .Pages {
-    .Pages-container {
-      white-space: pre-wrap;
-    }
-  
-    &--isHtml {
-      .Post-body {
-        white-space: normal;
-      }
+  .Pages-container {
+    white-space: pre-wrap;
+  }
+
+  &--isHtml {
+    .Post-body {
+      white-space: normal;
     }
   }
-  
-  .PagePage {
-    .Page-container {
-      max-width: 820px;
-    }
-  
-    // PageStructure always renders a sidebar column; pages have no sidebar.
-    .Page-sidebar {
-      display: none;
-    }
-  
-    .Page-content {
-      margin-top: 24px;
-    }
+}
+
+.PagePage {
+  .Page-sidebar {
+    display: none;
   }
+
+  .Page-content {
+    margin-top: 24px;
+  }
+}
