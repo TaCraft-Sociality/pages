@@ -8,8 +8,8 @@ import commonExtend from '../common/extend';
 export default [
   ...commonExtend,
 
-  new Extend.Routes() //
-    .add('homePage', '/pages/home', HomePage) //
-    .add('page', '/p/:id', PagePage) //
-    .helper('page', (page) => app.route('page', { id: page.id() + '-' + page.slug() })),
+  new Extend.Routes()
+    .add('homePage', '/pages/home', HomePage)
+    .add('page', '/p/:id', PagePage)
+    .helper('page', (page) => app.route('page', { id: page.slug() })),
 ];

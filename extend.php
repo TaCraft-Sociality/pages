@@ -23,8 +23,8 @@ return [
     (new Extend\Frontend('forum'))
         ->css(__DIR__.'/resources/less/forum.less')
         ->js(__DIR__.'/js/dist/forum.js')
-        ->route('/pages/home', 'pages.home')
-        ->route('/p/{id:[\d\S]+(?:-[^/]*)?}', 'pages.page', Content\Page::class),
+        ->route('/p/{id}', 'pages.page', Content\Page::class)
+        ->route('/pages/home', 'pages.home'),
 
     (new Extend\Settings())
         ->serializeToForum('fofPagesHome', 'pages_home'),

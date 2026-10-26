@@ -6,16 +6,10 @@ import listItems from 'flarum/common/helpers/listItems';
 
 import EditPageModal from './EditPageModal';
 
-/**
- * ### Props
- *
- * - `page`
- * - `onchange` called after the page is saved or deleted
- */
 export default class PagesListItem extends Component {
   view() {
     const page = this.attrs.page;
-    const url = app.forum.attribute('baseUrl') + '/p/' + page.id() + '-' + page.slug();
+    const url = app.forum.attribute('baseUrl') + '/p/' + page.slug();
     const badges = page.badges().toArray();
     return (
       <tr key={page.id()}>
