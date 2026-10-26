@@ -3,8 +3,6 @@ import Page from 'flarum/common/components/Page';
 import PageStructure from 'flarum/forum/components/PageStructure';
 import classList from 'flarum/common/utils/classList';
 
-import PageHero from './PageHero';
-
 export default class PagePage extends Page {
   oninit(vnode) {
     super.oninit(vnode);
@@ -52,11 +50,8 @@ export default class PagePage extends Page {
     m.redraw();
   }
 
-  /**
-   * Get the hero of current page.
-   */
   hero() {
-    return PageHero.component({ page: this.page });
+    return null;
   }
 
   /**
