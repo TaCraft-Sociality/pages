@@ -23,7 +23,8 @@ return [
     (new Extend\Frontend('forum'))
         ->css(__DIR__.'/resources/less/forum.less')
         ->js(__DIR__.'/js/dist/forum.js')
-        ->route('/p/{id}', 'pages.page', Content\Page::class)
+        ->route('/tcs/{id}', 'pages.page', Content\Page::class)
+        ->route('/p/{id}', 'pages.page.legacy', Content\Page::class)
         ->route('/pages/home', 'pages.home'),
 
     (new Extend\Settings())

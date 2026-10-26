@@ -10,6 +10,7 @@ export default [
 
   new Extend.Routes()
     .add('homePage', '/pages/home', HomePage)
-    .add('page', '/p/:id', PagePage)
+    .add('page', '/tcs/:id', PagePage)
+    .add('pageLegacy', '/p/:id', PagePage)
     .helper('page', (page) => app.route('page', { id: page.slug() })),
 ];

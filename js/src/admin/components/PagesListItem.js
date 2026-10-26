@@ -9,7 +9,7 @@ import EditPageModal from './EditPageModal';
 export default class PagesListItem extends Component {
   view() {
     const page = this.attrs.page;
-    const url = app.forum.attribute('baseUrl') + '/p/' + page.slug();
+    const url = app.forum.attribute('baseUrl') + '/tcs/' + page.slug();
     const badges = page.badges().toArray();
     return (
       <tr key={page.id()}>
