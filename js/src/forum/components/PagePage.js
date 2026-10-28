@@ -14,6 +14,22 @@ export default class PagePage extends Page {
     this.bodyClass = 'App--page';
   }
 
+  oncreate(vnode) {
+    if (super.oncreate) {
+      super.oncreate(vnode);
+    }
+
+    this.runScripts(vnode.dom);
+  }
+
+  onupdate(vnode) {
+    if (super.onupdate) {
+      super.onupdate(vnode);
+    }
+
+    this.runScripts(vnode.dom);
+  }
+
   view() {
     const page = this.page;
 
@@ -67,5 +83,24 @@ export default class PagePage extends Page {
         m.redraw(),
       ]);
     }
+  }
+
+  runScripts(root) {
+    if (!root) return;
+
+    root.querySelectorAll('script:not([data-executed])').forEach((old) => {
+      const script = document.createElement('script');
+
+      Array.from(old.attributes).forEach((attr) => {
+        script.setAttribute(attr.name, attr.value);
+      });
+
+      if (script.src) script.async = false;
+
+      script.textContent = old.textContent;
+      script.dataset.executed = 'true';
+
+      old.replaceWith(script);
+    });
   }
 }
